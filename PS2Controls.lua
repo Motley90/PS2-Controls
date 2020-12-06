@@ -1,3 +1,8 @@
+local UserControls = { 
+ { "Keyboard", false },
+ { "Controller", false }
+};
+
 local UserInput = {
   Circle = {
     Controller = pad:circle(),
