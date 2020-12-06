@@ -1,6 +1,6 @@
 local UserControls = { 
-  Keyboard = false },
-  Controller = false }
+  Keyboard = false;
+  Controller = false;
 };
 
 local UserInput = {
