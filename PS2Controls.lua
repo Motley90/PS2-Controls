@@ -1,6 +1,6 @@
 local UserControls = { 
- { "Keyboard", false },
- { "Controller", false }
+  Keyboard = false },
+  Controller = false }
 };
 
 local UserInput = {
@@ -18,7 +18,14 @@ local UserInput = {
     Keyboard_Equizulant = { F, F4 } }
 };
 
-function Buttons(Slot) 
+function Button_Name(ID)
+  if (ID == 0 ) return "Cross";
+  if (ID == 1 ) return "Square";
+  if (ID == 2 ) return "Circle";
+  if (ID == 3 ) return "Triangle";
+end
+			
+function Button_ID(Slot) 
   if (Slot == 0) 
     UserInput.Circle.Controller
     UserInput.Circle.Keyboard_Equizulant
@@ -38,4 +45,20 @@ function Buttons(Slot)
     UserInput.Triangle.Controller
     UserInput.Triangle.Keyboard_Equizulant
   end  
+end
+
+		
+local UserKey = {};
+function onUserKeyPressDown()
+  if (UserInput.Cross.Controller) UserKey.rawset(Button_Name(0), true);
+  if (UserInput.Square.Controller) UserKey.rawset(Button_Name(1), true);
+  if (UserInput.Circle.Controller) UserKey.rawset(Button_Name(2), true);
+  if (UserInput.Triangle.Controller) UserKey.rawset(Button_Name(3), true);
+end
+
+function onUserKeyPressUp()
+  if (!UserInput.Cross.Controller) UserKey.rawset(Button_Name(0), false);
+  if (!UserInput.Square.Controller) UserKey.rawset(Button_Name(1), false);
+  if (!UserInput.Circle.Controller) UserKey.rawset(Button_Name(2), false);
+  if (!UserInput.Triangle.Controller) UserKey.rawset(Button_Name(3), false);
 end
