@@ -35,8 +35,8 @@ function onUserKeyPressDown()
 end
 
 function onUserKeyPressUp()
-  if (!UserInput.Cross.Controller) UserKey.rawset(Button_Name(0), false);
-  if (!UserInput.Square.Controller) UserKey.rawset(Button_Name(1), false);
-  if (!UserInput.Circle.Controller) UserKey.rawset(Button_Name(2), false);
-  if (!UserInput.Triangle.Controller) UserKey.rawset(Button_Name(3), false);
+  if (not UserInput.Cross.Controller) UserKey.rawset(Button_Name(0), false);
+  if (not UserInput.Square.Controller) UserKey.rawset(Button_Name(1), false);
+  if (not UserInput.Circle.Controller) UserKey.rawset(Button_Name(2), false);
+  if (not UserInput.Triangle.Controller) UserKey.rawset(Button_Name(3), false);
 end
