@@ -1,20 +1,20 @@
 local UserControls = { 
   Keyboard = false;
-  Controller = false;
+  Remote_Controller = false;
 };
 
 local UserInput = {
   Circle = {
-    Controller = pad:circle(),
+    Controller = Controls.read():circle(),
     Keyboard_Equivalent = { D, F3 } },
   Cross = {
-    Controller = pad:cross(),
+    Controller = Controls.read():cross(),
     Keyboard_Equivalent = { A, F1 } },
   Square = {
-    Controller = pad:square(),
+    Controller = Controls.read():square(),
     Keyboard_Equivalent = { S, F2 } },
   Triangle = {
-    Controller = pad:triangle(),
+    Controller = Controls.read():triangle(),
     Keyboard_Equivalent = { F, F4 } }
 };
 
@@ -27,7 +27,8 @@ end
 			
 function Button_ID(Slot) 
   if (Slot == 0) 
-    UserInput.Circle.Controller
+    if (UserControls.Remote_Controller) 
+      if ( UserInput.Circle.Controller ) 
     UserInput.Circle.Keyboard_Equivalent
   end
   
