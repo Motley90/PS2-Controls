@@ -33,17 +33,17 @@ function Button_ID(Slot)
   end
   
   if (Slot == 1) 
-    UserInput.Cross.Controller
+    UserInput.Cross.Remote_Controller
     UserInput.Cross.Keyboard_Equivalent
   end  
 	 
   if (Slot == 2) 
-    UserInput.Square.Controller
+    UserInput.Square.Remote_Controller
     UserInput.Square.Keyboard_Equivalent
   end  	
   
   if (Slot == 3) 
-    UserInput.Triangle.Controller
+    UserInput.Triangle.Remote_Controller
     UserInput.Triangle.Keyboard_Equivalent
   end  
 end
