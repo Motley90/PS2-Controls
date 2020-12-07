@@ -4,17 +4,18 @@ local UserControls = {
 };
 
 local UserInput = {
+  pad = Controls.read()
   Circle = {
-    Controller = Controls.read():circle(),
+    Controller = pad:circle(),
     Keyboard_Equivalent = { D, F3 } },
   Cross = {
-    Controller = Controls.read():cross(),
+    Controller = pad:cross(),
     Keyboard_Equivalent = { A, F1 } },
   Square = {
-    Controller = Controls.read():square(),
+    Controller = pad:square(),
     Keyboard_Equivalent = { S, F2 } },
   Triangle = {
-    Controller = Controls.read():triangle(),
+    Controller = pad:triangle(),
     Keyboard_Equivalent = { F, F4 } }
 };
 
