@@ -24,31 +24,7 @@ function Button_Name(ID)
   if (ID == 2 ) return "Circle";
   if (ID == 3 ) return "Triangle";
 end
-			
-function Button_ID(Slot) 
-  if (Slot == 0) 
-    if (UserControls.Remote_Controller) 
-      if ( UserInput.Circle.Controller ) 
-    UserInput.Circle.Keyboard_Equivalent
-  end
-  
-  if (Slot == 1) 
-    UserInput.Cross.Remote_Controller
-    UserInput.Cross.Keyboard_Equivalent
-  end  
-	 
-  if (Slot == 2) 
-    UserInput.Square.Remote_Controller
-    UserInput.Square.Keyboard_Equivalent
-  end  	
-  
-  if (Slot == 3) 
-    UserInput.Triangle.Remote_Controller
-    UserInput.Triangle.Keyboard_Equivalent
-  end  
-end
-
-		
+				
 local UserKey = {};
 function onUserKeyPressDown()
   if (UserInput.Cross.Controller) UserKey.rawset(Button_Name(0), true);
