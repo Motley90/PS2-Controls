@@ -44,7 +44,8 @@ function Direction_Slot(ID)
   if (ID == 1 ) return "Down";
   if (ID == 2 ) return "Left";
   if (ID == 3 ) return "Right";
-									
+end
+								
 local UserKey = {};
 function onUserKeyPressDown()
   if (UserInput.Cross.Controller) UserKey.rawset(Button_Slot(0), true);
