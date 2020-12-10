@@ -48,25 +48,25 @@ end
 								
 local UserKey = {};
 function onUserKeyPressDown()
-  if (UserInput.Cross.Controller) UserKey.rawset(Button_Slot(0), true);
-  if (UserInput.Square.Controller) UserKey.rawset(Button_Slot(1), true);
-  if (UserInput.Circle.Controller) UserKey.rawset(Button_Slot(2), true);
-  if (UserInput.Triangle.Controller) UserKey.rawset(Button_Slot(3), true);
+  if (UserInput.Cross.Remote_Controller) UserKey.rawset(Button_Slot(0), true);
+  if (UserInput.Square.Remote_Controller) UserKey.rawset(Button_Slot(1), true);
+  if (UserInput.Circle.Remote_Controller) UserKey.rawset(Button_Slot(2), true);
+  if (UserInput.Triangle.Remote_Controller) UserKey.rawset(Button_Slot(3), true);
 														
-  if (UserInput.Up.Controller) UserKey.rawset(Direction_Slot(0), true);
-  if (UserInput.Down.Controller) UserKey.rawset(Direction_Slot(1), true);
-  if (UserInput.Left.Controller) UserKey.rawset(Direction_Slot(2), true);
-  if (UserInput.Right.Controller) UserKey.rawset(Direction_Slot(3), true);														
+  if (UserInput.Up.Remote_Controller) UserKey.rawset(Direction_Slot(0), true);
+  if (UserInput.Down.Remote_Controller) UserKey.rawset(Direction_Slot(1), true);
+  if (UserInput.Left.Remote_Controller) UserKey.rawset(Direction_Slot(2), true);
+  if (UserInput.Right.Remote_Controller) UserKey.rawset(Direction_Slot(3), true);														
 end
 
 function onUserKeyPressUp()
-  if (not UserInput.Cross.Controller) UserKey.rawset(Button_Slot(0), false);
-  if (not UserInput.Square.Controller) UserKey.rawset(Button_Slot(1), false);
-  if (not UserInput.Circle.Controller) UserKey.rawset(Button_Slot(2), false);
-  if (not UserInput.Triangle.Controller) UserKey.rawset(Button_Slot(3), false);
+  if (not UserInput.Cross.Remote_Controller) UserKey.rawset(Button_Slot(0), false);
+  if (not UserInput.Square.Remote_Controller) UserKey.rawset(Button_Slot(1), false);
+  if (not UserInput.Circle.Remote_Controller) UserKey.rawset(Button_Slot(2), false);
+  if (not UserInput.Triangle.Remote_Controller) UserKey.rawset(Button_Slot(3), false);
   
-  if (not UserInput.Up.Controller) UserKey.rawset(Direction_Slot(0), false);
-  if (not UserInput.Down.Controller) UserKey.rawset(Direction_Slot(1), false);
-  if (not UserInput.Left.Controller) UserKey.rawset(Direction_Slot(2), false);
-  if (not UserInput.Right.Controller) UserKey.rawset(Direction_Slot(3), false);	
+  if (not UserInput.Up.Remote_Controller) UserKey.rawset(Direction_Slot(0), false);
+  if (not UserInput.Down.Remote_Controller) UserKey.rawset(Direction_Slot(1), false);
+  if (not UserInput.Left.Remote_Controller) UserKey.rawset(Direction_Slot(2), false);
+  if (not UserInput.Right.Remote_Controller) UserKey.rawset(Direction_Slot(3), false);	
 end
