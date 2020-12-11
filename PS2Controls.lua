@@ -1,72 +1,59 @@
-local UserControls = { 
-  Keyboard = false;
-  Remote_Controller = false;
-};
 
-local UserInput = {
-  GetInput = Controls.read()
-  Circle = {
-    Remote_Controller = GetInput:circle(),
-    Keyboard_Equivalent = { D, F3 } },
-  Cross = {
-    Remote_Controller = GetInput:cross(),
-    Keyboard_Equivalent = { A, F1 } },
-  Square = {
-    Remote_Controller = GetInput:square(),
-    Keyboard_Equivalent = { S, F2 } },
-  Triangle = {
-    Remote_Controller = GetInput:triangle(),
-    Keyboard_Equivalent = { F, F4 } }
+GetInput = Controls.read()
+
+Circle = GetInput:circle()
+Cross = GetInput:cross()
+Square = GetInput:square()
+Triangle = GetInput:triangle()
 	
-  Up = {
-    Remote_Controller = GetInput:up(),
-    Keyboard_Equivalent = { Up, F5 } },
-  Down = {
-    Remote_Controller = GetInput:down(),
-    Keyboard_Equivalent = { Down, F6 } },
-  Left = {
-    Remote_Controller = GetInput:left(),
-    Keyboard_Equivalent = { Left, F7 } },
-  Right = {
-    Remote_Controller = GetInput:right(),
-    Keyboard_Equivalent = { Right, F8 } }
-};
+Up = GetInput:up()
+Down = GetInput:down()
+Left = GetInput:left()
+Right = GetInput:right()
 
 function Button_Slot(ID)
-  if (ID == 0 ) return "Cross";
-  if (ID == 1 ) return "Square";
-  if (ID == 2 ) return "Circle";
-  if (ID == 3 ) return "Triangle";
+
+  if (ID == 0 ) then return "Cross" end
+  if (ID == 1 ) then return "Square" end
+  if (ID == 2 ) then return "Circle" end
+  if (ID == 3 ) then return "Triangle" end
 end
 
 function Direction_Slot(ID)
-  if (ID == 0 ) return "Up";
-  if (ID == 1 ) return "Down";
-  if (ID == 2 ) return "Left";
-  if (ID == 3 ) return "Right";
+  if (ID == 0 ) then return "Up" end
+  if (ID == 1 ) then return "Down" end
+  if (ID == 2 ) then return "Left" end
+  if (ID == 3 ) then return "Right" end
 end
 								
-local UserKey = {};
+local UserKey = {}
 function onUserKeyPressDown()
-  if (UserInput.Cross.Remote_Controller) UserKey.rawset(Button_Slot(0), true);
-  if (UserInput.Square.Remote_Controller) UserKey.rawset(Button_Slot(1), true);
-  if (UserInput.Circle.Remote_Controller) UserKey.rawset(Button_Slot(2), true);
-  if (UserInput.Triangle.Remote_Controller) UserKey.rawset(Button_Slot(3), true);
+  if (Cross) then UserKey.rawset(Button_Slot(0), "Controller", true) end
+  if (Square) then UserKey.rawset(Button_Slot(1), "Controller",  true) end
+  if (Circle) then UserKey.rawset(Button_Slot(2), "Controller",  true) end
+  if (Triangle) then UserKey.rawset(Button_Slot(3), "Controller",  true) end
 														
-  if (UserInput.Up.Remote_Controller) UserKey.rawset(Direction_Slot(0), true);
-  if (UserInput.Down.Remote_Controller) UserKey.rawset(Direction_Slot(1), true);
-  if (UserInput.Left.Remote_Controller) UserKey.rawset(Direction_Slot(2), true);
-  if (UserInput.Right.Remote_Controller) UserKey.rawset(Direction_Slot(3), true);														
+  if (Up) then UserKey.rawset(Direction_Slot(0), "Controller",  true) end
+  if (Down) then UserKey.rawset(Direction_Slot(1), "Controller",  true) end
+  if (Left) then UserKey.rawset(Direction_Slot(2), "Controller",  true) end
+  if (Right) then UserKey.rawset(Direction_Slot(3), "Controller",  true) end
 end
 
 function onUserKeyPressUp()
-  if (not UserInput.Cross.Remote_Controller) UserKey.rawset(Button_Slot(0), false);
-  if (not UserInput.Square.Remote_Controller) UserKey.rawset(Button_Slot(1), false);
-  if (not UserInput.Circle.Remote_Controller) UserKey.rawset(Button_Slot(2), false);
-  if (not UserInput.Triangle.Remote_Controller) UserKey.rawset(Button_Slot(3), false);
+  if (Cross == nil) then UserKey.rawset(Button_Slot(0), "Controller",  false) end
+  if (Square == nil) then UserKey.rawset(Button_Slot(1), "Controller",  false) end
+  if (Circle == nil) then UserKey.rawset(Button_Slot(2), "Controller",  false) end
+  if (Triangle == nil) then UserKey.rawset(Button_Slot(3), "Controller",  false) end
   
-  if (not UserInput.Up.Remote_Controller) UserKey.rawset(Direction_Slot(0), false);
-  if (not UserInput.Down.Remote_Controller) UserKey.rawset(Direction_Slot(1), false);
-  if (not UserInput.Left.Remote_Controller) UserKey.rawset(Direction_Slot(2), false);
-  if (not UserInput.Right.Remote_Controller) UserKey.rawset(Direction_Slot(3), false);	
+  if (Up == nil) then UserKey.rawset(Direction_Slot(0), "Controller",  false) end
+  if (Down == nil) then UserKey.rawset(Direction_Slot(1), "Controller",  false) end
+  if (Left == nil) then UserKey.rawset(Direction_Slot(2), "Controller", false) end
+  if (Right == nil) then UserKey.rawset(Direction_Slot(3), "Controller",  false) end	
+end
+
+
+while true do
+  screen.waitVblankStart()
+  onUserKeyPressDown()
+  onUserKeyPressUp()
 end
