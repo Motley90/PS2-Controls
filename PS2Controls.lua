@@ -28,27 +28,27 @@ end
 								
 local UserKey = {}
 function onUserKeyPressDown()
-  if (Cross) then UserKey.insert(Button_Slot(0), "Controller", true) end
-  if (Square) then UserKey.insert(Button_Slot(1), "Controller",  true) end
-  if (Circle) then UserKey.insert(Button_Slot(2), "Controller",  true) end
-  if (Triangle) then UserKey.insert(Button_Slot(3), "Controller",  true) end
+  if (Cross) then UserKey.insert(Button_Slot(1), "Controller", true) end
+  if (Square) then UserKey.insert(Button_Slot(2), "Controller",  true) end
+  if (Circle) then UserKey.insert(Button_Slot(3), "Controller",  true) end
+  if (Triangle) then UserKey.insert(Button_Slot(4), "Controller",  true) end
 														
-  if (Up) then UserKey.insert(Direction_Slot(0), "Controller",  true) end
-  if (Down) then UserKey.insert(Direction_Slot(1), "Controller",  true) end
-  if (Left) then UserKey.insert(Direction_Slot(2), "Controller",  true) end
-  if (Right) then UserKey.insert(Direction_Slot(3), "Controller",  true) end
+  if (Up) then UserKey.insert(Direction_Slot(1), "Controller",  true) end
+  if (Down) then UserKey.insert(Direction_Slot(2), "Controller",  true) end
+  if (Left) then UserKey.insert(Direction_Slot(3), "Controller",  true) end
+  if (Right) then UserKey.insert(Direction_Slot(4), "Controller",  true) end
 end
 
 function onUserKeyPressUp()
-  if (Cross == nil) then UserKey.remove(Button_Slot(0), "Controller") end
-  if (Square == nil) then UserKey.remove(Button_Slot(1), "Controller") end
-  if (Circle == nil) then UserKey.remove(Button_Slot(2), "Controller") end
-  if (Triangle == nil) then UserKey.remove(Button_Slot(3), "Controller") end
+  if (Cross == nil) then UserKey.remove(Button_Slot(1), "Controller") end
+  if (Square == nil) then UserKey.remove(Button_Slot(2), "Controller") end
+  if (Circle == nil) then UserKey.remove(Button_Slot(3), "Controller") end
+  if (Triangle == nil) then UserKey.remove(Button_Slot(4), "Controller") end
   
-  if (Up == nil) then UserKey.remove(Direction_Slot(0), "Controller") end
-  if (Down == nil) then UserKey.remove(Direction_Slot(1), "Controller") end
-  if (Left == nil) then UserKey.remove(Direction_Slot(2), "Controller") end
-  if (Right == nil) then UserKey.remove(Direction_Slot(3), "Controller") end	
+  if (Up == nil) then UserKey.remove(Direction_Slot(1), "Controller") end
+  if (Down == nil) then UserKey.remove(Direction_Slot(2), "Controller") end
+  if (Left == nil) then UserKey.remove(Direction_Slot(3), "Controller") end
+  if (Right == nil) then UserKey.remove(Direction_Slot(4), "Controller") end	
 end
 
 local idxslot = 4
