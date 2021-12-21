@@ -13,6 +13,7 @@ onPlayerMoveToVector()
 onPlayerMenuDisplay()
 etc. This would be similar to a yeild method.
 Now onPlayerMoveToVector() could catch directional keys. Once you want that to stop you can set the boolean to false 
+This would be great for mapping the buttons out as a scripting language should be used for..
 
 I didn't like Lua when I wrote this and hated the syntax and object handling in the language.
 
