@@ -1,4 +1,23 @@
+--[[ 
 
+The standard method to handle controllers are bad practice. 
+Most scripts will use while loops everywhere just to catch keys. 
+This is bad practice and promotes piss poor projects on memory handling
+100 % discouraged. A main C or assembly trigger should be implimented to catch keys when pressed
+Once byte code recieves a update a main Event for controller input should be triggered.
+
+This code was intended to test lua. Implimenting a controller logging method to attempt to catch keys.
+You should consider using this method and expanding it differently and using one main loop to catch input.
+In this loop you could add booleans and if true do some method
+onPlayerMoveToVector()
+onPlayerMenuDisplay()
+etc. This would be similar to a yeild method.
+Now onPlayerMoveToVector() could catch directional keys. Once you want that to stop you can set the boolean to false 
+
+I didn't like Lua when I wrote this and hated the syntax and object handling in the language.
+
+If you follow through and notice you have slow movement that's becuase you are infinite looping either way too much, bad code, or it could be as simple as to many if statements constantly going. 
+]]
 GetInput = Controls.read()
 
 Circle = GetInput:circle()
